@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const PhotoGalleryWrap = styled.div`
   width: 100vw;
@@ -38,27 +38,25 @@ const Photo = styled.img`
   }
 `;
 
-export default () => {
-  return (
-    <PhotoGalleryWrap>
-      <PhotoGallery>
-        <Photo
-          src="images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg"
-          alt="Front view"
-        />
-        <Photo
-          src="images/Long-Cotton-Gabardine Car-Coat-2@2x.jpg"
-          alt="Burburry square close-up"
-        />
-        <Photo
-          src="images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg"
-          alt="Collar close-up"
-        />
-        <Photo
-          src="images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg"
-          alt="Back view"
-        />
-      </PhotoGallery>
-    </PhotoGalleryWrap>
-  );
-};
+export default () => (
+  <PhotoGalleryWrap>
+    <PhotoGallery>
+      <Photo
+        src="images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg"
+        alt="Front view"
+      />
+      <Photo
+        src="images/Long-Cotton-Gabardine Car-Coat-2@2x.jpg"
+        alt="Burburry square close-up"
+      />
+      <Photo
+        src="images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg"
+        alt="Collar close-up"
+      />
+      <Photo
+        src="images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg"
+        alt="Back view"
+      />
+    </PhotoGallery>
+  </PhotoGalleryWrap>
+);

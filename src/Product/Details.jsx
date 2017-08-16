@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import Price from "./Price";
-import ColorButton from "./ColorButton";
-import Divider from "../Common/Divider";
-import Button from "../Common/Button";
-import ButtonText from "./ButtonText";
-import SelectSize from "./SelectSize";
+import React from 'react';
+import styled from 'styled-components';
+import Price from './Price';
+import ColorButton from './ColorButton';
+import Divider from '../Common/Divider';
+import Button from '../Common/Button';
+import ButtonText from './ButtonText';
+import SelectSize from './SelectSize';
 
-import { XsMd, Lg } from "../Common/Breakpoints";
+import { XsMd, Lg } from '../Common/Breakpoints';
 
 const Details = styled.section`
   padding-top: 1rem;
@@ -72,50 +72,48 @@ const Text = styled.p`
   line-height: 1.3333333333;
 `;
 
-export default () => {
-  return (
-    <Details>
-      <Price price={110000} currency="RUB" id={39428531} />
-      <div className="row">
-        <div className="col-xs-12 col-lg-6">
-          <Color>
+export default () => (
+  <Details>
+    <Price price={110000} currency="RUB" id={39428531} />
+    <div className="row">
+      <div className="col-xs-12 col-lg-6">
+        <Color>
             Colour: <b>Honey</b>
-          </Color>
-          <ChangeColorButtons>
-            <ColorButton color="#232122" type="button">
+        </Color>
+        <ChangeColorButtons>
+          <ColorButton color="#232122" type="button">
               Choose black colour
-            </ColorButton>
-            <ColorButton color="#cfa880" type="button" active>
+          </ColorButton>
+          <ColorButton color="#cfa880" type="button" active>
               Choose honey colour
-            </ColorButton>
-          </ChangeColorButtons>
-          <DetailsDivider />
-        </div>
-        <div className="col-xs-12 col-lg-6">
-          <SelectSize />
-        </div>
+          </ColorButton>
+        </ChangeColorButtons>
+        <DetailsDivider />
       </div>
-      <div className="row">
-        <Lg>
-          <div className="col-lg-6">
-            <Button type="button" primary>Add to bag</Button>
-          </div>
-        </Lg>
-        <div className="col-xs-12 col-lg-6">
-          <Button type="button">Find in store</Button>
-        </div>
-        <XsMd>
-          <div className="col-xs-12 col-lg-6">
-            <ButtonText type="button">Need size help?</ButtonText>
-          </div>
-        </XsMd>
+      <div className="col-xs-12 col-lg-6">
+        <SelectSize />
       </div>
-      <DeliveryInfo>
-        <Title>Free Next Day Delivery</Title>
-        <Text>
+    </div>
+    <div className="row">
+      <Lg>
+        <div className="col-lg-6">
+          <Button type="button" primary>Add to bag</Button>
+        </div>
+      </Lg>
+      <div className="col-xs-12 col-lg-6">
+        <Button type="button">Find in store</Button>
+      </div>
+      <XsMd>
+        <div className="col-xs-12 col-lg-6">
+          <ButtonText type="button">Need size help?</ButtonText>
+        </div>
+      </XsMd>
+    </div>
+    <DeliveryInfo>
+      <Title>Free Next Day Delivery</Title>
+      <Text>
           Order before 7pm Monday to Thursday for delivery the next day
-        </Text>
-      </DeliveryInfo>
-    </Details>
-  );
-};
+      </Text>
+    </DeliveryInfo>
+  </Details>
+);

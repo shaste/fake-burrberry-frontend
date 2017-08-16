@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { FormattedNumber } from "react-intl";
+import React from 'react';
+import styled from 'styled-components';
+import { FormattedNumber } from 'react-intl';
+import PropTypes from 'prop-types';
 
 const Content = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const Content = styled.div`
   }
 `;
 
-const Price = styled.h2`
+const PriceStyled = styled.h2`
   margin: 0;
   font-size: 1rem;
   font-weight: 400;
@@ -35,21 +36,27 @@ const VendorCode = styled.p`
   }
 `;
 
-export default function(props) {
+export default function Price(props) {
   return (
     <Content>
-      <Price>
+      <PriceStyled>
         <FormattedNumber
-          style="currency"
+          style="currency" // eslint-disable-line
           currency={props.currency}
           currencyStyle="code"
           minimumFractionDigits="0"
           value={props.price}
         />
-      </Price>
+      </PriceStyled>
       <VendorCode>
         Item {props.id}
       </VendorCode>
     </Content>
   );
 }
+
+Price.propTypes = {
+  currency: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
+};

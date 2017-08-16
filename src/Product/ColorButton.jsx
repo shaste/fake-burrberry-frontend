@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.button`
   margin-right: 1rem;
@@ -7,5 +7,5 @@ export default styled.button`
   font-size: 0;
   background: ${props => props.color};
   border-radius: 100px;
-  border: ${props => (props.active ? "solid 1px #232122" : "none")};
+  border: ${props => (props.active ? 'solid 1px #232122' : 'none')};
 `;

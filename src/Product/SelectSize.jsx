@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "../Common/Button";
-import ButtonSmall from "../Common/ButtonSmall";
-import ButtonText from "./ButtonText";
+import React from 'react';
+import styled from 'styled-components';
+import Button from '../Common/Button';
+import ButtonSmall from '../Common/ButtonSmall';
+import ButtonText from './ButtonText';
 
-import { XsMd, Lg } from "../Common/Breakpoints";
+import { XsMd, Lg } from '../Common/Breakpoints';
 
 const Size = styled.p`
   margin: 0;
@@ -20,26 +20,24 @@ const SelectedSize = styled.div`
   }
 `;
 
-export default () => {
-  return (
-    <div>
-      <XsMd>
-        <Button type="button" primary>
+export default () => (
+  <div>
+    <XsMd>
+      <Button type="button" primary>
           Select a size
-        </Button>
-      </XsMd>
-      <Lg>
-        <SelectedSize>
-          <Size>
+      </Button>
+    </XsMd>
+    <Lg>
+      <SelectedSize>
+        <Size>
             Size: <b>XL</b>
-          </Size>
-          <ButtonText type="button">Need size help?</ButtonText>
-        </SelectedSize>
-        <ButtonSmall>S</ButtonSmall>
-        <ButtonSmall>M</ButtonSmall>
-        <ButtonSmall>L</ButtonSmall>
-        <ButtonSmall selected>XL</ButtonSmall>
-      </Lg>
-    </div>
-  );
-};
+        </Size>
+        <ButtonText type="button">Need size help?</ButtonText>
+      </SelectedSize>
+      <ButtonSmall>S</ButtonSmall>
+      <ButtonSmall>M</ButtonSmall>
+      <ButtonSmall>L</ButtonSmall>
+      <ButtonSmall selected>XL</ButtonSmall>
+    </Lg>
+  </div>
+);

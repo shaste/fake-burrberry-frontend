@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "./assets/logo.svg";
+import React from 'react';
+import styled from 'styled-components';
+import logo from './assets/logo.svg';
 
 const Header = styled.header`
   display: flex;
@@ -28,12 +28,10 @@ const Logo = styled.img`
   }
 `;
 
-export default () => {
-  return (
-    <Header>
-      <a href="">
-        <Logo src={logo} alt="" />
-      </a>
-    </Header>
-  );
-};
+export default () => (
+  <Header>
+    <a href="">
+      <Logo src={logo} alt="" />
+    </a>
+  </Header>
+);

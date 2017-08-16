@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.button`
   box-sizing: border-box;
@@ -14,6 +14,6 @@ export default styled.button`
   border-radius: 2px;
   border: solid 1px #171717;
 
-  background-color: ${props => (props.primary ? "#171717" : "Transparent")};
-  color: ${props => (props.primary ? "#ffffff" : "#171717")};
+  background-color: ${props => (props.primary ? '#171717' : 'transparent')};
+  color: ${props => (props.primary ? '#ffffff' : '#171717')};
 `;

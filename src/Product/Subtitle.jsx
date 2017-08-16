@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import triangle from "../assets/triangle.svg";
+import styled from 'styled-components';
+import triangle from '../assets/triangle.svg';
 
 export default styled.h2`
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -23,7 +23,7 @@ export default styled.h2`
     background-position: center right;
     content: "";
 
-    ${props => (props.active ? "transform: rotate(180deg)" : "")};
+    ${props => (props.active ? 'transform: rotate(180deg)' : '')};
   }
 
   @media all and (min-width: 48rem) {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default styled.button`
   padding: 0.5rem 1rem;
@@ -12,5 +12,5 @@ export default styled.button`
   border-radius: 2px;
   border: solid 1px #171717;
 
-  font-weight: ${props => (props.selected ? "700" : "")};
+  font-weight: ${props => (props.selected ? '700' : '')};
 `;

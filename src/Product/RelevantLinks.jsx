@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import SectionTitle from "../Common/SectionTitle";
+import React from 'react';
+import styled from 'styled-components';
+import SectionTitle from '../Common/SectionTitle';
 
 const RelevantLinks = styled.section`
   display: block;
@@ -25,15 +25,13 @@ const Link = styled.a`
   color: #171717;
 `;
 
-export default () => {
-  return (
-    <RelevantLinks>
-      <SectionTitle>More for you</SectionTitle>
-      <LinksContent>
-        <Link href="">Men’s Black Trench Coats</Link>
-        <Link href="">Men’s Short Trench Coats</Link>
-        <Link href="">Men’s Long Trench Coats</Link>
-      </LinksContent>
-    </RelevantLinks>
-  );
-};
+export default () => (
+  <RelevantLinks>
+    <SectionTitle>More for you</SectionTitle>
+    <LinksContent>
+      <Link href="">Men’s Black Trench Coats</Link>
+      <Link href="">Men’s Short Trench Coats</Link>
+      <Link href="">Men’s Long Trench Coats</Link>
+    </LinksContent>
+  </RelevantLinks>
+);
