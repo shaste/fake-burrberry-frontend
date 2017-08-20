@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../Common/Button';
-import ButtonSmall from '../Common/ButtonSmall';
+import Button from '../../Common/Button';
+import ButtonSmall from '../../Common/ButtonSmall';
 import ButtonText from './ButtonText';
 
-import { XsMd, Lg } from '../Common/Breakpoints';
+import { XsMd, Lg } from '../../Common/Breakpoints';
 
 const Size = styled.p`
   margin: 0;

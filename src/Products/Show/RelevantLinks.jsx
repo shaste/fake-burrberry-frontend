@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SectionTitle from '../Common/SectionTitle';
+import SectionTitle from '../../Common/SectionTitle';
 
 const RelevantLinks = styled.section`
   display: block;

@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Lg } from '../Common/Breakpoints';
+import Store from './Store';
 
 const Navigation = styled.div`
   display: none;
@@ -12,6 +15,7 @@ const Navigation = styled.div`
 
   @media all and (min-width: 62rem) {
     padding-top: 4rem;
+    padding-bottom: 2.25rem;
   }
 `;
 
@@ -26,7 +30,7 @@ const Title = styled.h4`
   color: #171717;
 `;
 
-const Link = styled.a`
+const LinkStyled = styled(Link)`
   display: block;
   margin: 0;
   padding-bottom: 0.75rem;
@@ -37,42 +41,47 @@ const Link = styled.a`
   text-decoration: none;
   color: #999999;
 `;
-export default () => (
-  <Navigation>
+
+export default () =>
+  (<Navigation>
     <div className="row">
       <div className="col-md-3">
         <nav>
           <Title>CUSTOMER SERVICE</Title>
-          <Link href="">Contact Us</Link>
-          <Link href="">Payment</Link>
-          <Link href="">Shipping</Link>
-          <Link href="">Returns</Link>
-          <Link href="">Faqs</Link>
-          <Link href="">Live Chat</Link>
-          <Link href="">The Burberry App</Link>
-          <Link href="">Store Locator</Link>
+          <LinkStyled to="">Contact Us</LinkStyled>
+          <LinkStyled to="">Payment</LinkStyled>
+          <LinkStyled to="">Shipping</LinkStyled>
+          <LinkStyled to="">Returns</LinkStyled>
+          <LinkStyled to="">Faqs</LinkStyled>
+          <LinkStyled to="">Live Chat</LinkStyled>
+          <LinkStyled to="">The Burberry App</LinkStyled>
+          <LinkStyled to="">Store Locator</LinkStyled>
         </nav>
       </div>
       <div className="col-md-3">
         <nav>
           <Title>OUR COMPANY</Title>
-          <Link href="">Our History</Link>
-          <Link href="">Burberry Group Plc</Link>
-          <Link href="">Careers</Link>
-          <Link href="">Corporate Responsibility</Link>
-          <Link href="">Site map</Link>
+          <LinkStyled to="">Our History</LinkStyled>
+          <LinkStyled to="">Burberry Group Plc</LinkStyled>
+          <LinkStyled to="">Careers</LinkStyled>
+          <LinkStyled to="">Corporate Responsibility</LinkStyled>
+          <LinkStyled to="">Site map</LinkStyled>
         </nav>
       </div>
       <div className="col-md-3">
         <nav>
           <Title>LEGAL & COOKIES</Title>
-          <Link href="">Terms & Conditions</Link>
-          <Link href="">Privacy Policy</Link>
-          <Link href="">Cookie Policy</Link>
-          <Link href="">Accessibility Statement</Link>
-          <Link href="">Japan Only - SCTL Indications</Link>
+          <LinkStyled to="">Terms & Conditions</LinkStyled>
+          <LinkStyled to="">Privacy Policy</LinkStyled>
+          <LinkStyled to="">Cookie Policy</LinkStyled>
+          <LinkStyled to="">Accessibility Statement</LinkStyled>
+          <LinkStyled to="">Japan Only - SCTL Indications</LinkStyled>
         </nav>
       </div>
+      <div className="col-md-3">
+        <Lg>
+          <Store />
+        </Lg>
+      </div>
     </div>
-  </Navigation>
-);
+  </Navigation>);

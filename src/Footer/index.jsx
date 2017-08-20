@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 
 const Footer = styled.footer`
@@ -21,14 +22,14 @@ const Settings = styled.div`
   }
 
   @media all and (min-width: 62rem) {
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
   }
 `;
 
 const Button = styled.button`
   padding: 0;
   margin-bottom: 1rem;
-  font-family: "Raleway";
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.75rem;
   line-height: 1.3333333333;
   text-align: left;
@@ -40,6 +41,8 @@ const Button = styled.button`
     margin: 0 1.5rem 0 0;
   }
 `;
+
+const Select = styled.span`color: #171717;`;
 
 const Help = styled.div`
   padding-top: 0;
@@ -53,11 +56,16 @@ const Help = styled.div`
 const Title = styled.h5`
   margin: 0;
   padding: 0.5rem 0 1rem 0;
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1875;
+  color: #171717;
   display: block;
   text-align: center;
 `;
 
-const Link = styled.a`
+const LinkStyled = styled(Link)`
   display: block;
   font-family: "Lora";
   font-size: 0.875rem;
@@ -68,18 +76,21 @@ const Link = styled.a`
   color: #171717;
 `;
 
-export default () => (
-  <Footer>
+export default () =>
+  (<Footer>
     <div className="container">
       <Navigation />
       <Settings>
-        <Button>Shipping country: Russian Federation</Button>
-        <Button>Language: English</Button>
+        <Button>
+          Shipping country: <Select>Russian Federation</Select>
+        </Button>
+        <Button>
+          Language: <Select>English</Select>
+        </Button>
       </Settings>
       <Help>
         <Title>Need help?</Title>
-        <Link href="">Find out more and contact us</Link>
+        <LinkStyled to="">Find out more and contact us</LinkStyled>
       </Help>
     </div>
-  </Footer>
-);
+  </Footer>);

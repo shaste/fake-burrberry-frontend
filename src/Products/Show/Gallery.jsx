@@ -42,19 +42,19 @@ export default () => (
   <PhotoGalleryWrap>
     <PhotoGallery>
       <Photo
-        src="images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg"
+        src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg`}
         alt="Front view"
       />
       <Photo
-        src="images/Long-Cotton-Gabardine Car-Coat-2@2x.jpg"
+        src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-2@2x.jpg`}
         alt="Burburry square close-up"
       />
       <Photo
-        src="images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg"
+        src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg`}
         alt="Collar close-up"
       />
       <Photo
-        src="images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg"
+        src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg`}
         alt="Back view"
       />
     </PhotoGallery>

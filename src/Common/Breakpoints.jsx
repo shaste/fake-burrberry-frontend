@@ -22,6 +22,11 @@ export const XsMd = ({ children }) =>
     {children}
   </Responsive>);
 
+export const FromMd = ({ children }) =>
+  (<Responsive minWidth={768}>
+    {children}
+  </Responsive>);
+
 Lg.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -35,5 +40,9 @@ Xs.propTypes = {
 };
 
 XsMd.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+FromMd.propTypes = {
   children: PropTypes.node.isRequired,
 };

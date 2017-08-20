@@ -9,6 +9,7 @@ const RecommendProductStyled = styled.a`
   text-decoration: none;
   color: #171717;
 `;
+
 const Photo = styled.img`
   display: block;
   width: 100%;

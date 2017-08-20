@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Subtitle from './Subtitle';
 
-import { Lg } from '../Common/Breakpoints';
+import { Lg } from '../../Common/Breakpoints';
 
 const Description = styled.div`
   border-top: 1px solid #c6c6c6;
@@ -111,7 +111,7 @@ export default () => (
           <Lg>
             <div className="col-lg-8">
               <Photo
-                src="images/Long-Cotton-Gabardine Car-Coat-5@2x.jpg"
+                src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-5@2x.jpg`}
                 alt="Button close-up"
               />
             </div>
@@ -122,19 +122,19 @@ export default () => (
         <Showcase className="row">
           <div className="col-lg-4">
             <Photo
-              src="images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg"
+              src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg`}
               alt="Collar close-up"
             />
           </div>
           <div className="col-lg-4">
             <Photo
-              src="images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg"
+              src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-4@2x.jpg`}
               alt="Back view"
             />
           </div>
           <div className="col-lg-4">
             <Photo
-              src="images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg"
+              src={`${process.env.PUBLIC_URL}/images/Long-Cotton-Gabardine Car-Coat-3@2x.jpg`}
               alt="Collar close-up"
             />
           </div>

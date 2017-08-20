@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import Details from './Details';
 import Title from './Title';
 
-import { XsMd, Lg } from '../Common/Breakpoints';
+import { XsMd, Lg } from '../../Common/Breakpoints';
 
 const Info = styled.section`
   @media all and (min-width: 62rem) {
@@ -31,7 +31,7 @@ export default () => (
           </XsMd>
           <Lg>
             <Photo
-              src="images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg"
+              src="/images/Long-Cotton-Gabardine Car-Coat-1@2x.jpg"
               alt="Front view"
             />
           </Lg>

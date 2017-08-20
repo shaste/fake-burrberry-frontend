@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Price from './Price';
 import ColorButton from './ColorButton';
-import Divider from '../Common/Divider';
-import Button from '../Common/Button';
+import Divider from '../../Common/Divider';
+import Button from '../../Common/Button';
 import ButtonText from './ButtonText';
 import SelectSize from './SelectSize';
 
-import { XsMd, Lg } from '../Common/Breakpoints';
+import { XsMd, Lg } from '../../Common/Breakpoints';
 
 const Details = styled.section`
   padding-top: 1rem;

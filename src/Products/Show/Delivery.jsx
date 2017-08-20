@@ -62,7 +62,7 @@ export default () => (
     <div className="container">
       <div className="row middle-lg">
         <div className="col-md-7">
-          <Photo src="images/gift-package@2x.jpg" alt="Gift package" />
+          <Photo src={`${process.env.PUBLIC_URL}/images/gift-package@2x.jpg`} alt="Gift package" />
         </div>
         <div className="col-xs-12 col-md-5 col-lg-offset-1 col-lg-4">
           <SubtitleDelivery>Delivery</SubtitleDelivery>

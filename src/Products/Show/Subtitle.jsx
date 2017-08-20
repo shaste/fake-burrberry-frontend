@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import triangle from '../assets/triangle.svg';
+import triangle from '../../assets/triangle.svg';
 
 export default styled.h2`
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
