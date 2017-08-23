@@ -4,3 +4,27 @@ node_js:
 
 script:
   - npm run test
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+script:
+  - npm run test
+
+before_deploy:
+  - npm run build
+
+deploy:
+  - provider: script
+    script: now alias $(now build -t=$NOW_TOKEN --public) $URL_DEV -t=$NOW_TOKEN
+    skip_cleanup: true
+    on:
+      branch: develop
+
+  - provider: script
+    script: now alias $(now build -t=$NOW_TOKEN --public) $URL_PROD -t=$NOW_TOKEN
+    skip_cleanup: true
+    on:
+      branch: master
