@@ -102,7 +102,7 @@ export default function Card(props) {
         <CardLabel>
           {props.label}
         </CardLabel>
-        <Like title="Add to favorites"/>
+        <Like title="Add to favorites" />
       </Wrapper>
       <LinkStyled to={`${props.to}`}>
         <Title>

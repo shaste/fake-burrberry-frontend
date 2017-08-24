@@ -102,7 +102,9 @@ class Header extends Component {
             <Hamburger src={hamburger} />
           </Xs>
           <FromMd>
-            <CountrySelect active={this.state.active} onClick={this.handleClick}>Shopping in: United Kingdom (£)</CountrySelect>
+            <CountrySelect active={this.state.active} onClick={this.handleClick}>
+              Shopping in: United Kingdom (£)
+            </CountrySelect>
           </FromMd>
           <Link to="">
             <Logo src={logo} alt="" />
