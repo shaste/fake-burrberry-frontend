@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Xs, FromMd } from '../Common/Breakpoints';
@@ -7,7 +7,7 @@ import hamburger from '../assets/hamburger.svg';
 import arrow from '../assets/arrow.svg';
 import Categories from './Categories';
 
-const Header = styled.header`
+const HeaderSt = styled.header`
   position: relative;
   display: flex;
   justify-content: center;
@@ -54,6 +54,7 @@ const CountrySelect = styled.button`
   color: #999999;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -80,20 +81,39 @@ const Logo = styled.img`
   }
 `;
 
-export default () =>
-  (<div className="container">
-    <Header>
-      <Xs>
-        <Hamburger src={hamburger} />
-      </Xs>
-      <FromMd>
-        <CountrySelect>Shopping in: United Kingdom (£)</CountrySelect>
-      </FromMd>
-      <Link to="">
-        <Logo src={logo} alt="" />
-      </Link>
-    </Header>
-    <FromMd>
-      <Categories />
-    </FromMd>
-  </div>);
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { active: false };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      active: !state.active,
+    }));
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <HeaderSt>
+          <Xs>
+            <Hamburger src={hamburger} />
+          </Xs>
+          <FromMd>
+            <CountrySelect active={this.state.active} onClick={this.handleClick}>Shopping in: United Kingdom (£)</CountrySelect>
+          </FromMd>
+          <Link to="">
+            <Logo src={logo} alt="" />
+          </Link>
+        </HeaderSt>
+        <FromMd>
+          <Categories />
+        </FromMd>
+      </div>
+    );
+  }
+}
+
+export default Header;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FormattedNumber, FormattedPlural } from 'react-intl';
 
 import PropTypes from 'prop-types';
-import heart from '../assets/heart.svg';
+import Like from '../assets/Like';
 
 const CardStyled = styled.div`
   display: block;
@@ -67,19 +67,6 @@ const CardLabel = styled.p`
   color: #171717;
 `;
 
-const Like = styled.button`
-  margin-left: 1rem;
-  content: "";
-  width: 14px;
-  height: 14px;
-  background-size: contain;
-  background-image: url(${heart});
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  font-size: 0;
-`;
-
 const Colors = styled.h4`
   margin-top: 0;
   margin-bottom: 0.25rem;
@@ -115,7 +102,7 @@ export default function Card(props) {
         <CardLabel>
           {props.label}
         </CardLabel>
-        <Like>Add to favorites</Like>
+        <Like title="Add to favorites"/>
       </Wrapper>
       <LinkStyled to={`${props.to}`}>
         <Title>
