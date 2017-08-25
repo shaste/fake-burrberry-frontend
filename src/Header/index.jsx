@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Xs, FromMd } from '../Common/Breakpoints';
 import logo from '../assets/logo.svg';
 import hamburger from '../assets/hamburger.svg';
-import arrow from '../assets/arrow.svg';
 import Categories from './Categories';
+import CountrySelect from './CountrySelect';
 
 const HeaderSt = styled.header`
   position: relative;
@@ -41,35 +41,6 @@ const Hamburger = styled.button`
   }
 `;
 
-const CountrySelect = styled.button`
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 0.75rem;
-  line-height: 1.3333333333;
-  font-weight: 600;
-  text-align: left;
-  color: #999999;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  &::after {
-    content: "";
-    display: inline-block;
-    margin-left: 0.5rem;
-    width: 12px;
-    height: 6px;
-    background-size: contain;
-    background-image: url(${arrow});
-    background-repeat: no-repeat;
-
-    ${props => (props.active ? 'transform: rotate(180deg)' : '')};
-  }
-`;
-
 const Logo = styled.img`
   display: block;
   height: 0.75rem;
@@ -81,41 +52,20 @@ const Logo = styled.img`
   }
 `;
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { active: false };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      active: !state.active,
-    }));
-  }
-
-  render() {
-    return (
-      <div className="container">
-        <HeaderSt>
-          <Xs>
-            <Hamburger src={hamburger} />
-          </Xs>
-          <FromMd>
-            <CountrySelect active={this.state.active} onClick={this.handleClick}>
-              Shopping in: United Kingdom (£)
-            </CountrySelect>
-          </FromMd>
-          <Link to="">
-            <Logo src={logo} alt="" />
-          </Link>
-        </HeaderSt>
-        <FromMd>
-          <Categories />
-        </FromMd>
-      </div>
-    );
-  }
-}
-
-export default Header;
+export default () =>
+  (<div className="container">
+    <HeaderSt>
+      <Xs>
+        <Hamburger src={hamburger} />
+      </Xs>
+      <FromMd>
+        <CountrySelect />
+      </FromMd>
+      <Link to="">
+        <Logo src={logo} alt="" />
+      </Link>
+    </HeaderSt>
+    <FromMd>
+      <Categories />
+    </FromMd>
+  </div>);
