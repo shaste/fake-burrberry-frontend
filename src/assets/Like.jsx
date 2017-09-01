@@ -52,9 +52,13 @@ class Like extends Component {
   }
 }
 
+Like.defaultProps = {
+  fill: 'none',
+};
+
 Like.propTypes = {
   title: PropTypes.string.isRequired,
-  fill: PropTypes.string.isRequired,
+  fill: PropTypes.string,
 };
 
 export default Like;

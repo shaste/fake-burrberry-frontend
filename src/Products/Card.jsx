@@ -121,7 +121,7 @@ export default function Card(props) {
           style="currency" // eslint-disable-line
           currency={props.currency}
           currencyStyle="code"
-          minimumFractionDigits="0"
+          minimumFractionDigits={0}
           value={props.price}
         />
       </Price>

@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -17,7 +16,7 @@ const Dropdown = styled.button`
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.75rem;
   line-height: 1.3333333333;
-  color: #171717;
+  color: ${props => (props.parentOpened && !props.active ? '#999999' : '#171717')};
 
   &::after {
     content: "";
@@ -26,10 +25,10 @@ const Dropdown = styled.button`
     width: 12px;
     height: 6px;
     background-size: contain;
-    background-image: url(${arrow});
-    background-repeat: no-repeat;
+    -webkit-mask: url(${arrow}) bottom no-repeat;
+    background-color: ${props => (props.parentOpened && !props.active ? '#999999' : '#171717')};
 
-    ${props => (props.open ? 'transform: rotate(180deg)' : '')};
+    transform: ${props => (props.active ? 'rotate(180deg)' : '')};
   }
 
   @media all and (min-width: 48rem) {
@@ -38,56 +37,80 @@ const Dropdown = styled.button`
 `;
 
 const Content = styled.div`
-  display: none;
+  display: ${props => (props.active ? 'block' : 'none')};
   position: absolute;
   width: auto;
-  padding: 1.5rem 1rem;
-  left: 0;
+  padding: 1rem 1.5rem;
+  left: -1.5rem;
   top: 100%;
-  background-color: red;
-
-  &.is-active {
-    display: block;
-  }
+  z-index: 9999;
+  background-color: #f3f3f3;
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3333333333;
+  color: #171717;
 `;
 
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: false };
-    this.hide = this.hide.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
-  show() {
-    this.setState({ active: true });
-    document.addEventListener('click', this.hide);
+  state = { isOpened: false };
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleOutsideClick, true);
   }
 
-  hide() {
-    this.setState({ active: false });
-    document.removeEventListener('click', this.hide);
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideClick, true);
+  }
+
+  toggle(on) {
+    if (on !== this.state.isOpened) {
+      this.setState(
+        prevState => ({ isOpened: !prevState.isOpened }),
+        () => this.props.onClick(this.state.isOpened),
+      );
+    }
+  }
+
+  handleOutsideClick(e) {
+    if (this.node && !this.node.contains(e.target)) {
+      this.toggle(false);
+    }
   }
 
   render() {
     return (
       <FilterStyled>
-        <Dropdown
-          active={this.state.active}
-          open={this.props.open}
-          onClick={() => {
-            this.props.onClick();
-            this.show();
+        <div
+          ref={(node) => {
+            this.node = node;
           }}
         >
-          {this.props.title}
-        </Dropdown>
-        <Content className={this.state.active ? 'is-active' : null}>bla bla</Content>
+          <Dropdown
+            active={this.state.isOpened}
+            parentOpened={this.props.parentOpened}
+            onClick={this.toggle}
+          >
+            {this.props.title}
+          </Dropdown>
+          <Content active={this.state.isOpened}>
+            {this.props.children}
+          </Content>
+        </div>
       </FilterStyled>
     );
   }
 }
 
 Filter.propTypes = {
+  parentOpened: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
 };
 

@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Filter from './Filter';
 
-const Filters = styled.div`
+const FiltersSt = styled.div`
   flex-direction: row;
   display: flex;
-  overflow-x: scroll;
+
   white-space: nowrap;
 
   @media all and (min-width: 48rem) {
     justify-content: space-between;
-    overflow-x: hidden;
   }
 `;
 
@@ -29,13 +28,42 @@ const Title = styled.p`
   }
 `;
 
-export default () =>
-  (<Filters>
-    <div>
-      <Title>Refine by</Title>
-      <Filter title="Category" />
-      <Filter title="Colour" />
-      <Filter title="Size" />
-    </div>
-    <Filter title="Sort by price" />
-  </Filters>);
+class Filters extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  state = {
+    isOpened: false,
+  };
+
+  handleClick() {
+    this.setState(() => ({
+      isOpened: !this.state.isOpened,
+    }));
+  }
+  render() {
+    return (
+      <FiltersSt>
+        <div>
+          <Title>Refine by</Title>
+          <Filter title="Category" onClick={this.handleClick} parentOpened={this.state.isOpened}>
+            <div>test 1</div>
+          </Filter>
+          <Filter title="Colour" onClick={this.handleClick} parentOpened={this.state.isOpened}>
+            <div>test 2</div>
+          </Filter>
+          <Filter title="Size" onClick={this.handleClick} parentOpened={this.state.isOpened}>
+            <div>test test</div>
+          </Filter>
+        </div>
+        <Filter title="Sort by price" onClick={this.handleClick} parentOpened={this.state.isOpened}>
+          <div>test 2</div>
+        </Filter>
+      </FiltersSt>
+    );
+  }
+}
+
+export default Filters;
