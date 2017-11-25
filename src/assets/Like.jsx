@@ -18,8 +18,8 @@ class Like extends Component {
   }
 
   handleClick() {
-    this.setState(state => ({
-      toggle: !state.toggle,
+    this.setState(prevState => ({
+      toggle: !prevState.toggle,
     }));
   }
 
@@ -52,13 +52,9 @@ class Like extends Component {
   }
 }
 
-Like.defaultProps = {
-  fill: 'none',
-};
-
 Like.propTypes = {
   title: PropTypes.string.isRequired,
-  fill: PropTypes.string,
+  fill: PropTypes.string.isRequired,
 };
 
 export default Like;

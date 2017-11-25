@@ -39,7 +39,7 @@ const Dropdown = styled.button`
 const Content = styled.div`
   display: ${props => (props.active ? 'block' : 'none')};
   position: absolute;
-  width: auto;
+
   padding: 1rem 1.5rem;
   left: -1.5rem;
   top: 100%;
@@ -72,7 +72,7 @@ class Filter extends Component {
     if (on !== this.state.isOpened) {
       this.setState(
         prevState => ({ isOpened: !prevState.isOpened }),
-        () => this.props.onClick(this.state.isOpened),
+        () => this.props.blabla(this.state.isOpened),
       );
     }
   }
@@ -109,7 +109,7 @@ class Filter extends Component {
 
 Filter.propTypes = {
   parentOpened: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+  blabla: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
 };

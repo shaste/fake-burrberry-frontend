@@ -27,7 +27,7 @@ export default () => (
           label="Relaxed fit"
           img="https://assets.burberry.com/is/image/Burberryltd/995466e7e1113f3b2f6484ceb090072e1c9062dc.jpg?$BBY_V2_ML_3X4$&hei=960&wid=720"
           title="The Westminster – Long Heritage Trench Coat"
-          colorNumber={3}
+          colorAmount={3}
           price={120000}
           currency="RUB"
         />
@@ -40,7 +40,7 @@ export default () => (
           label="Toilered fit"
           img="https://assets.burberry.com/is/image/Burberryltd/90dd344122ccf1884fce63c4fc775bd6baa7a11f.jpg?$BBY_V2_ML_3X4$&hei=960&wid=720"
           title="The Kensington – Mid-Length Heritage Trench Coat"
-          colorNumber={4}
+          colorAmount={4}
           price={110000}
           currency="RUB"
         />
@@ -53,7 +53,7 @@ export default () => (
           label="Slim fit"
           img="https://assets.burberry.com/is/image/Burberryltd/fb6adea94455f2a73e97b5cf2d7811d9135dcbe2.jpg?$BBY_V2_ML_3X4$&hei=960&wid=720"
           title="The Sandringham – Mid-length Heritage Trench Coat"
-          colorNumber={3}
+          colorAmount={3}
           price={100000}
           currency="RUB"
         />
@@ -66,7 +66,7 @@ export default () => (
           label="Relaxed fit"
           img="https://assets.burberry.com/is/image/Burberryltd/a2fa084eae958434c326685fc8ff19dfce9fe430.jpg?$BBY_V2_ML_3X4$&hei=960&wid=720"
           title="The Westminster – Long Heritage Trench Coat"
-          colorNumber={1}
+          colorAmount={1}
           price={120000}
           currency="RUB"
         />

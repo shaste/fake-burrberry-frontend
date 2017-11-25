@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import Filters from './Filters';
 
-const CategoryHeader = styled.div`
+const CategoryHeaderStyled = styled.div`
   background-color: #f3f3f3;
   padding-top: 2rem;
 
@@ -59,21 +59,31 @@ const LinkStyled = styled(Link)`
   border-bottom: 1px solid #171717;
 `;
 
-export default () =>
-  (<CategoryHeader>
-    <div className="container">
-      <Title>Men’s Clothing</Title>
-      <div className="row">
-        <div className="col-xs-12 col-md-9 col-lg-7">
-          <Text>
-            <p>
-              Explore our menswear collection for the season. Sculptural knitwear,{' '}
-              <LinkStyled to="">sweatshirts</LinkStyled>, artist overalls and oversized cabans
-              feature alongside our signature trench coat in both heritage.<Button>More</Button>
-            </p>
-          </Text>
+function CategoryHeader(props) {
+  return (
+    <CategoryHeaderStyled>
+      <div className="container">
+        <Title>Men’s Clothing</Title>
+        <div className="row">
+          <div className="col-xs-12 col-md-9 col-lg-7">
+            <Text>
+              <p>
+                Explore our menswear collection for the season. Sculptural knitwear,{' '}
+                <LinkStyled to="">sweatshirts</LinkStyled>, artist overalls and oversized cabans
+                feature alongside our signature trench coat in both heritage.<Button>More</Button>
+              </p>
+            </Text>
+          </div>
         </div>
+        <Filters blabla={props.blabla} parentOpened={props.parentOpened} />
       </div>
-      <Filters />
-    </div>
-  </CategoryHeader>);
+    </CategoryHeaderStyled>
+  );
+}
+
+CategoryHeader.propTypes = {
+  parentOpened: PropTypes.bool.isRequired,
+  blabla: PropTypes.func.isRequired,
+};
+
+export default CategoryHeader;

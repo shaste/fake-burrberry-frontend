@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { Xs, FromMd } from '../Common/Breakpoints';
 import logo from '../assets/logo.svg';
 import hamburger from '../assets/hamburger.svg';
@@ -52,20 +53,29 @@ const Logo = styled.img`
   }
 `;
 
-export default () =>
-  (<div className="container">
-    <HeaderSt>
-      <Xs>
-        <Hamburger src={hamburger} />
-      </Xs>
+function Header(props) {
+  return (
+    <div className="container">
+      <HeaderSt>
+        <Xs>
+          <Hamburger src={hamburger} onClick={props.openMenu} />
+        </Xs>
+        <FromMd>
+          <CountrySelect />
+        </FromMd>
+        <Link to="">
+          <Logo src={logo} alt="" />
+        </Link>
+      </HeaderSt>
       <FromMd>
-        <CountrySelect />
+        <Categories />
       </FromMd>
-      <Link to="">
-        <Logo src={logo} alt="" />
-      </Link>
-    </HeaderSt>
-    <FromMd>
-      <Categories />
-    </FromMd>
-  </div>);
+    </div>
+  );
+}
+
+Header.PropTypes = {
+  openMenu: PropTypes.func.isRequired,
+};
+
+export default Header;
